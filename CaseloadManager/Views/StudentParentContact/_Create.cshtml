@@ -1,0 +1,56 @@
+﻿@model CaseloadManager.Models.StudentParentContactModelDataCRUD
+<form id="CreateStudentParentContactForm">
+<fieldset>
+    <legend>Add Parent Contact Record For @Model.StudentName</legend>
+    @Html.HiddenFor(m => m.StudentId)
+    @Html.HiddenFor(m => m.ShowCancelButton)
+    <dl>
+        <dt>
+            @Html.LabelFor(m => m.DateOfContact)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.DateOfContact)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.TimeOfContact)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.TimeOfContact)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.StudentParentId)
+        </dt>
+        <dd>
+            @Html.DropDownListFor(m => m.StudentParentId, Model.StudentParents)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.ContactMade)
+        </dt>
+        <dd>
+            @Html.CheckBoxFor(m => m.ContactMade)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.ContactNotes)
+        </dt>
+        <dd>
+            @Html.TextAreaFor(m => m.ContactNotes, new { @class = "k-textbox", @style = "min-height:150px; min-width:250px;" })
+        </dd>
+        <dt>
+            <button class="gray" id="saveContactRecord">
+                Save</button>
+            @if (Model.ShowCancelButton)
+            {
+                <text> &nbsp;&nbsp;
+                <button class="gray" id="cancelButton">
+                    Cancel</button>
+                </text> 
+            }
+        </dt>
+        <dd id="postSaveDD">
+        </dd>
+    </dl>
+    <div id="addParentWindow">
+    </div>
+</fieldset>
+</form>
+<script src="../../Scripts/StudentParentContact/Create.js?ScriptVersion=@CaseloadManager.Helpers.AppSettings.ScriptVersion"></script>

@@ -1,0 +1,16 @@
+﻿@model CaseloadManager.Entities.StudentEvaluation
+<form id="DeleteEvaluationForm"> 
+<br /> 
+<p>
+    <b>Are you sure you want to delete @(@Model.Student.FirstName + " " + @Model.Student.LastName)'s
+        Evaluation scheduled for @(@Model.ScheduledDate.ToShortDateString() + " " + @Model.ScheduledDate.ToShortTimeString()) and any attachments?</b>
+    <br /><br />
+    <button class="gray" id="deleteEvaluation">
+        Yes, Delete</button>&nbsp;&nbsp;
+    <button class="gray" id="cancelEvaluation">
+        No, Cancel</button>
+    
+    @Html.HiddenFor(m=> m.StudentEvaluationId)
+</p>
+</form>
+<script src="../../Scripts/StudentEvaluation/Delete.js?@CaseloadManager.Helpers.AppSettings.ScriptVersion"></script>

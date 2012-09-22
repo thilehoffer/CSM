@@ -1,0 +1,38 @@
+﻿@using System.Diagnostics
+@using System.Globalization
+@using System.Linq
+@using CaseloadManager.Helpers
+@model CaseloadManager.Models.StudentIEPModel
+<form id="IEPDocumentsForm">
+    @{
+        Debug.Assert(Model.StudentIEPId != null, "Model.StudentIEPId != null");
+        Debug.Assert(Model.ScheduledDate != null, "Model.ScheduledDate != null");
+    }
+    <br />
+    <p>
+        <b>Documents for <a href="javascript:EditIep(@Model.StudentIEPId.Value.ToString(CultureInfo.InvariantCulture))">@(Model.StudentName)'s IEP on @Model.ScheduledDate.Value.ToString(CultureInfo.InvariantCulture)</a> </b>
+    </p>
+    <div class="clear">
+    </div>
+    @Html.Partial("~/Views/Documents/_DocumentsListTable.cshtml", Model.GetIepDocuments())
+    <div class="clear">
+    </div>
+    <dl>
+        <dt>Add new Attachment</dt>
+        <dd>
+            <input id='attachments' name='attachments' type="file" />
+        </dd>
+        <dd>
+            <button class="gray" id="FinishedButton">
+                Finished</button>
+        </dd>
+    </dl>
+
+
+
+    <div class="clear">
+    </div>
+    @Html.HiddenFor(m => m.StudentIEPId.Value)
+    <input type="hidden" value="@Model.GetIepDocuments().Count()" id ="IepDocumentCount" />
+</form>
+<script type="text/javascript" src="../../Scripts/StudentIEP/Documents.js?@AppSettings.ScriptVersion"></script>

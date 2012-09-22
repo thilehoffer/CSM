@@ -1,0 +1,16 @@
+﻿@model CaseloadManager.Entities.StudentParent
+<form id="DeleteStudentParentForm">
+<br /> 
+<p>
+    @Html.HiddenFor(m => m.StudentParentId)
+    <b>Are you sure you want to delete @(@Model.FirstName + " " +   @Model.LastName) and all recorded contact?</b>
+    <br /><br />
+
+
+    <button class="gray" id="deleteStudentParent">
+        Yes, Delete</button>&nbsp;&nbsp;
+    <button class="gray" id="CancelDeleteStudentParent">
+        No, Cancel</button>
+</p>
+</form>
+<script src="../../Scripts/StudentParent/Delete.js?ScriptVersion=@CaseloadManager.Helpers.AppSettings.ScriptVersion"></script>

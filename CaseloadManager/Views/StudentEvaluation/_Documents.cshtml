@@ -1,0 +1,36 @@
+﻿@using System.Diagnostics
+@using System.Globalization
+@using CaseloadManager.Helpers
+@using System.Linq
+@model CaseloadManager.Models.StudentEvaluationModel
+<form id="EvaluationDocumentsForm">
+    <input type='hidden' id="EvaluationDocumentsCount" value="@Model.GetEvaluationDocuments().Count().ToString(CultureInfo.InvariantCulture)"/>
+    <br />
+    <p>
+        @{
+            Debug.Assert(Model.StudentEvaluationId != null, "Model.StudentEvaluationId != null");
+
+            Debug.Assert(Model.ScheduledDate != null, "Model.ScheduledDate != null");
+        }
+        <b>Documents for <a href="javascript:EditEvaluation(@Model.StudentEvaluationId.Value.ToString(CultureInfo.InvariantCulture))">@(Model.StudentName)'s
+                             Evaluation on 
+                            
+                             @Model.ScheduledDate.Value.ToString(CultureInfo.InvariantCulture)</a></b>
+    </p>
+    @Html.HiddenFor(m => m.StudentEvaluationId)
+    <div class="clear">
+    </div>
+    @Html.Partial("~/Views/Documents/_DocumentsListTable.cshtml", Model.GetEvaluationDocuments())
+    <div class="clear">
+    </div>
+    <dl>
+        <dt>Add new Attachment</dt>
+        <dd>
+            <input id='attachments' name='attachments' type="file" />
+        </dd>
+        <dd>
+            <button class="gray" id="FinishedButton">
+                Finished</button></dd>
+    </dl>
+</form>
+<script src="../../Scripts/StudentEvaluation/Documents.js?@AppSettings.ScriptVersion"></script>

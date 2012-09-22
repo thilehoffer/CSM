@@ -1,0 +1,37 @@
+﻿@using CaseloadManager.Helpers
+@{
+    ViewBag.Title = "My Students";
+}
+<link href="@Url.Content("~/Content/StudentIndex.css")?scriptVersion=@AppSettings.ScriptVersion"  rel="stylesheet" type="text/css" />
+
+<h2>My Students <span id="searchOption">options</span>
+</h2>
+<div id="optionsDiv">
+
+    <label for="selectCurrentOnly">Include Previous Students</label>
+
+    <select id="selectCurrentOnly">
+        <option selected="selected">No</option>
+        <option>Yes</option>
+    </select>
+    <div class="clear-empty"></div>
+    <br />
+    <a id="applyOptions"class="graySmall" href=''>Apply</a>
+    <a id="cancelOptions" class="graySmall" href=''>Cancel</a>
+    <div class="clear-empty"></div>
+</div>
+
+<div class="clear-empty">
+</div>
+<div class="top-section">
+    <a class="gray" href='/Student/Create' >Add new</a>
+    <input type="text" id="searchInput" class="k-textbox search" placeholder="Search on first or last name" />
+
+</div>
+<div class="clear">
+</div>
+<div id="grid">
+</div>
+<script type="text/javascript" src="../../Scripts/Student/Index.js?scriptVersion=@AppSettings.ScriptVersion">
+</script>
+ 

@@ -1,0 +1,36 @@
+﻿<table id="dataTable" class="tablesorter" >
+    <thead>
+        <tr>
+            <th>
+                Date Uploaded
+            </th>
+            <th>
+                Document
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var doc in Model)
+        {
+            <tr>
+                <td>
+                    @(doc.CreatedOn.ToString("dddd MMM d, yyyy hh:mm tt"))
+                </td>
+                <td>
+                    @(doc.Name)
+                </td>
+                <td>
+                    <a class='edit graySmall' target="_blank" href="@(@Url.Content("~/Document/Get/") + doc.StudentDocumentId.ToString())">
+                        dowload</a>
+                </td>
+                <td>
+                    <a class='delete graySmall' href="javascript:deleteDoc('@(@doc.StudentDocumentId.ToString())');">delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

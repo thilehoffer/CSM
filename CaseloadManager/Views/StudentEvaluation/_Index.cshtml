@@ -1,0 +1,57 @@
+﻿@using System.Diagnostics
+@model CaseloadManager.Models.StudentModel
+<table id="dataTable" class="tablesorter">
+    <thead>
+        <tr>
+            <th>Scheduled Date
+            </th>
+            <th>Date Complete
+            </th>
+            <th>Complete
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model.GetEvaluations())
+        {
+
+            Debug.Assert(m.StudentEvaluationId != null, "m.StudentEvaluationId != null");
+           
+            <tr>
+                <td>
+                    @(m.ScheduledDate.HasValue ? m.ScheduledDate.Value.ToString("dddd MMM d, yyyy") : "")
+                </td>
+                <td>
+                    @(m.DateCompleted.HasValue ? m.DateCompleted.Value.ToString("dddd MMM d, yyyy") : "")
+                </td>
+                <td>
+                    @(m.IsComplete ? "Yes" : "No")
+                </td>
+                <td>
+                    <a class='graySmall' href='javascript:GetEvaluationAttachments(
+                                                
+                                                  @(m.StudentEvaluationId.Value))' >attachments</a>
+                </td>
+                <td>
+                    <a class='graySmall' href='javascript:EditEvaluation(@(m.StudentEvaluationId.Value))' >edit</a>
+                </td>
+                <td>
+                    <a class='graySmall' href='javascript:GetDeleteEvaluation(@(m.StudentEvaluationId.Value))'>delete</a>
+                </td>
+            </tr>
+         
+        }
+    </tbody>
+</table>
+<div class="clear">
+</div>
+<div>
+    <button class="gray" id="createEvaluation">
+        Create Evaluation</button>
+</div>
+<div class="clear">
+</div>
+<script src="../../Scripts/StudentEvaluation/Index.js?ScriptVersion=@CaseloadManager.Helpers.AppSettings.ScriptVersion"></script>

@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42B67F0A-F1A0-4F19-BC40-27309DFB1A13}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CaseloadManager</RootNamespace>
+    <AssemblyName>CaseloadManager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=1.0.11220.104, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Administration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RegisterClientValidationExtensions.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\Admin\DisabilityCategoryController.cs" />
+    <Compile Include="Controllers\DocumentController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Controllers\FormDataController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\StudentEvaluationController.cs" />
+    <Compile Include="Controllers\StudentParentContactController.cs" />
+    <Compile Include="Controllers\StudentParentController.cs" />
+    <Compile Include="Controllers\StudentIEPController.cs" />
+    <Compile Include="Data\AccountRecovery.cs" />
+    <Compile Include="Data\CRUD.cs" />
+    <Compile Include="Data\Lists.cs" />
+    <Compile Include="Data\Objects.cs" />
+    <Compile Include="Data\Queries.cs" />
+    <Compile Include="Helpers\StringExtensions.cs" />
+    <Compile Include="Helpers\Validation.cs" />
+    <Compile Include="Models\Containers.cs" />
+    <Compile Include="Data\DataContext.cs" />
+    <Compile Include="Data\Security.cs" />
+    <Compile Include="Data\UserKeys.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\AppSettings.cs" />
+    <Compile Include="Helpers\Enums.cs" />
+    <Compile Include="Helpers\HtmlExtension.cs" />
+    <Compile Include="Helpers\JsonAjaxResult.cs" />
+    <Compile Include="Helpers\Misc.cs" />
+    <Compile Include="Helpers\SessionItems.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\DisabilityCategoryModels.cs" />
+    <Compile Include="Models\DocumentModels.cs" />
+    <Compile Include="Models\HomeModel.cs" />
+    <Compile Include="Models\CheckResult.cs" />
+    <Compile Include="Models\Model\Model.Base.cs" />
+    <Compile Include="Models\StudentEvaluationModel.cs" />
+    <Compile Include="Models\StudentIEPModel.cs" />
+    <Compile Include="Models\StudentModels.cs" />
+    <Compile Include="Models\StudentParentContact.cs" />
+    <Compile Include="Models\StudentParentModel.cs" />
+    <Compile Include="Models\EventModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Images\arrow_off.png" />
+    <Content Include="Content\Images\arrow_on.png" />
+    <Content Include="Content\Images\arrow_right.png" />
+    <Content Include="Content\Images\arrow_white.png" />
+    <Content Include="Content\Images\asc.gif" />
+    <Content Include="Content\Images\asc.png" />
+    <Content Include="Content\Images\bg.gif" />
+    <Content Include="Content\Images\bg.png" />
+    <Content Include="Content\Images\bg_grad_top.png" />
+    <Content Include="Content\Images\bg_menu.png" />
+    <Content Include="Content\Images\bg_nav.png" />
+    <Content Include="Content\Images\btn_20.png" />
+    <Content Include="Content\Images\bullet.png" />
+    <Content Include="Content\Images\bullet_white.png" />
+    <Content Include="Content\Images\desc.gif" />
+    <Content Include="Content\Images\desc.png" />
+    <Content Include="Content\Images\google+-ui-sprite-colour.png" />
+    <Content Include="Content\Images\google+-ui-sprite-gray.png" />
+    <Content Include="Content\Images\gradient_light.png" />
+    <Content Include="Content\Images\toggle.png" />
+    <Content Include="Content\Images\_pattern.png" />
+    <None Include="Content\Kendu\js\kendo.web-vsdoc.js" />
+    <Content Include="Content\Kendu\js\kendo.web.min.js" />
+    <Content Include="Content\Kendu\styles\images\android-sprite.png" />
+    <Content Include="Content\Kendu\styles\images\iconmasks.svg" />
+    <Content Include="Content\Kendu\styles\images\ios-sprite.png" />
+    <Content Include="Content\Kendu\styles\kendo.dataviz.min.css" />
+    <Content Include="Content\Kendu\styles\kendo.mobile.all.min.css" />
+    <Content Include="Content\Kendu\styles\kendo.mobile.android2.min.css" />
+    <Content Include="Content\Kendu\styles\kendo.mobile.android4.min.css" />
+    <Content Include="Content\Kendu\styles\kendo.mobile.blackberry.min.css" />
+    <Content Include="Content\Kendu\styles\kendo.mobile.ios.min.css" />
+    <Content Include="Content\Kendu\styles\kendo.mobile.meego.min.css" />
+    <Content Include="Content\StudentIndex.css" />
+    <Content Include="Content\TableSort.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="README.jQuery.vsdoc.txt" />
+    <Content Include="Scripts\Admin\Create.js" />
+    <Content Include="Scripts\Admin\Edit.js" />
+    <Content Include="Scripts\Admin\Index.js" />
+    <Content Include="Scripts\Caseloadmanager.Helpers.js" />
+    <Content Include="Scripts\CaseloadManager.JsonAjaxResult.js" />
+    <Content Include="Scripts\Events\Index.js" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.tmpl.min.js" />
+    <Content Include="Content\Kendu\js\kendo.all.min.js" />
+    <Content Include="Content\Kendu\styles\Black\editor.png" />
+    <Content Include="Content\Kendu\styles\Black\imagebrowser.png" />
+    <Content Include="Content\Kendu\styles\Black\loading-image.gif" />
+    <Content Include="Content\Kendu\styles\Black\loading.gif" />
+    <Content Include="Content\Kendu\styles\Black\slider-h.gif" />
+    <Content Include="Content\Kendu\styles\Black\slider-v.gif" />
+    <Content Include="Content\Kendu\styles\Black\sprite.png" />
+    <Content Include="Content\Kendu\styles\BlueOpal\editor.png" />
+    <Content Include="Content\Kendu\styles\BlueOpal\imagebrowser.png" />
+    <Content Include="Content\Kendu\styles\BlueOpal\loading-image.gif" />
+    <Content Include="Content\Kendu\styles\BlueOpal\loading.gif" />
+    <Content Include="Content\Kendu\styles\BlueOpal\slider-h.gif" />
+    <Content Include="Content\Kendu\styles\BlueOpal\slider-v.gif" />
+    <Content Include="Content\Kendu\styles\BlueOpal\sprite.png" />
+    <Content Include="Content\Kendu\styles\Default\editor.png" />
+    <Content Include="Content\Kendu\styles\Default\imagebrowser.png" />
+    <Content Include="Content\Kendu\styles\Default\loading-image.gif" />
+    <Content Include="Content\Kendu\styles\Default\loading.gif" />
+    <Content Include="Content\Kendu\styles\Default\slider-h.gif" />
+    <Content Include="Content\Kendu\styles\Default\slider-v.gif" />
+    <Content Include="Content\Kendu\styles\Default\sprite.png" />
+    <Content Include="Content\Kendu\styles\kendo.black.min.css" />
+    <Content Include="Content\Kendu\styles\kendo.blueopal.min.css" />
+    <Content Include="Content\Kendu\styles\kendo.common.min.css" />
+    <Content Include="Content\Kendu\styles\kendo.default.min.css" />
+    <Content Include="Content\Kendu\styles\kendo.hakama.min.css" />
+    <Content Include="Content\Kendu\styles\kendo.kendo.min.css" />
+    <Content Include="Content\Kendu\styles\kendo.metro.min.css" />
+    <Content Include="Content\Kendu\styles\kendo.silver.min.css" />
+    <Content Include="Content\Kendu\styles\Metro\editor.png" />
+    <Content Include="Content\Kendu\styles\Metro\imagebrowser.png" />
+    <Content Include="Content\Kendu\styles\Metro\loading-image.gif" />
+    <Content Include="Content\Kendu\styles\Metro\loading.gif" />
+    <Content Include="Content\Kendu\styles\Metro\slider-h.gif" />
+    <Content Include="Content\Kendu\styles\Metro\slider-v.gif" />
+    <Content Include="Content\Kendu\styles\Metro\sprite.png" />
+    <Content Include="Content\Kendu\styles\Silver\editor.png" />
+    <Content Include="Content\Kendu\styles\Silver\imagebrowser.png" />
+    <Content Include="Content\Kendu\styles\Silver\loading-image.gif" />
+    <Content Include="Content\Kendu\styles\Silver\loading.gif" />
+    <Content Include="Content\Kendu\styles\Silver\slider-h.gif" />
+    <Content Include="Content\Kendu\styles\Silver\slider-v.gif" />
+    <Content Include="Content\Kendu\styles\Silver\sprite.png" />
+    <Content Include="Content\Kendu\styles\textures\glass.png" />
+    <Content Include="Content\Kendu\styles\textures\highlight.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-mask-min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery.tablesorter.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\namespace.js" />
+    <Content Include="Scripts\StudentEvaluation\Create.js" />
+    <Content Include="Scripts\StudentEvaluation\Delete.js" />
+    <Content Include="Scripts\StudentEvaluation\Documents.js" />
+    <Content Include="Scripts\StudentEvaluation\Edit.js" />
+    <Content Include="Scripts\StudentEvaluation\Index.js" />
+    <Content Include="Scripts\StudentIEP\Delete.js" />
+    <Content Include="Scripts\StudentIEP\Documents.js" />
+    <Content Include="Scripts\StudentIEP\Edit.js" />
+    <Content Include="Scripts\StudentIEP\Index.js" />
+    <Content Include="Scripts\StudentParentContact\Create.js" />
+    <Content Include="Scripts\StudentParentContact\Delete.js" />
+    <Content Include="Scripts\StudentParentContact\Documents.js" />
+    <Content Include="Scripts\StudentParentContact\Edit.js" />
+    <Content Include="Scripts\StudentParentContact\Index.js" />
+    <Content Include="Scripts\StudentParent\Create.js" />
+    <Content Include="Scripts\StudentParent\Delete.js" />
+    <Content Include="Scripts\StudentParent\Edit.js" />
+    <Content Include="Scripts\StudentParent\Index.js" />
+    <Content Include="Scripts\Student\BasicInfo.js" />
+    <Content Include="Scripts\Student\Create.js" />
+    <Content Include="Scripts\Student\Details.js" />
+    <Content Include="Scripts\StudentIEP\Create.js" />
+    <Content Include="Scripts\Student\Index.js" />
+    <Content Include="Test.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DisabilityCategory\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DisabilityCategory\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DisabilityCategory\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Student\Create.cshtml" />
+    <Content Include="Views\Student\Details.cshtml" />
+    <Content Include="Views\Student\_BasicInfoPartial.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CaseloadManager.Entities\CaseloadManager.Entities.csproj">
+      <Project>{E2698379-0DCE-4D1C-987E-BE5CD14781DB}</Project>
+      <Name>CaseloadManager.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\RecoverAccount.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\RecoveryInfoNotFound.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentIEP\_Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentIEP\_Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentIEP\_Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentIEP\_Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentEvaluation\_Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentEvaluation\_Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentEvaluation\_Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentEvaluation\_Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Documents\_DocumentsListTable.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentEvaluation\_Documents.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\NoAccess.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\NotFound.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentIEP\_Documents.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentParent\_Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentParentContact\_Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentParentContact\_Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentParent\_Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentParent\_Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentParentContact\_NoParents.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentParent\_Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentParentContact\_Documents.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentParentContact\_Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\StudentParentContact\_Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Feedback.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\FeedbackSubmitted.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\Debug.pubxml" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Properties\PublishProfiles\Release.pubxml" />
+    <Content Include="Views\Events\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63407</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51777/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

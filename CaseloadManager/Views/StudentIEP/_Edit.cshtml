@@ -1,0 +1,56 @@
+﻿@model CaseloadManager.Models.StudentIEPModel
+<form id="EditIEPForm">
+<fieldset>
+    <legend>Update IEP For @Model.StudentName</legend>
+
+    @Html.HiddenFor(m => m.StudentIEPId)
+    <dl>
+        <dt>
+            @Html.LabelFor(m => m.ScheduledDate)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.ScheduledDate)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.ScheduledDateTime)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.ScheduledDateTime)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.DateOfMeeting)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.DateOfMeeting)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.DateOfMeetingTime)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.DateOfMeetingTime)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.IsCurrent)
+        </dt>
+        <dd>
+            @Html.CheckBoxFor(m => m.IsCurrent)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.IsComplete)
+        </dt>
+        <dd>
+            @Html.CheckBoxFor(m => m.IsComplete)
+        </dd>
+        <dt>
+            <button class="gray" id="saveIEP">
+                Save</button>
+            &nbsp;&nbsp;
+            <button class="gray" id="cancelIEP">
+                Cancel</button>
+        </dt>
+        <dd id="postCreateIEPDDpostEditIEPDD">
+        </dd>
+    </dl>
+</fieldset>
+</form>
+<script src="../../Scripts/StudentIEP/Edit.js?ScriptVersion=@CaseloadManager.Helpers.AppSettings.ScriptVersion"></script>

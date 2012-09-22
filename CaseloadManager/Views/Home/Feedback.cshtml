@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Feedback";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model CaseloadManager.Models.FeedbackModel
+<form method="post">
+<h3>Tell us what you think about the application</h3>
+<br /> 
+    <b>Leave your comments:</b>
+    <br />
+     @Html.TextAreaFor(m => m.comments, new { @class = "k-textbox", @style = "min-height:150px; min-width:250px;" })
+   
+    <br />
+    <br />
+    <input type="submit" id="save" class="gray" value="Send Comments" />
+</form>

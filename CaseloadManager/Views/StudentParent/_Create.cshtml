@@ -1,0 +1,55 @@
+﻿@model CaseloadManager.Models.EditStudentParentModel 
+<form id="CreateParentForm">
+    <fieldset>
+        <legend>@string.Format("Add new guardian for {0} {1}", Model.StudentFirstName, Model.StudentLastName)</legend>
+        @Html.HiddenFor(m => m.StudentId)
+        <dl>
+            <dt>
+                @Html.LabelFor(m => m.FirstName)
+            </dt>
+            <dd>
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "k-textbox", maxlegth = 256 })
+            </dd>
+            <dt>
+                @Html.LabelFor(m => m.LastName)
+            </dt>
+            <dd>
+                @Html.TextBoxFor(m => m.LastName, new { @class = "k-textbox", maxlegth = 256 })
+            </dd>
+            <dt>
+                @Html.LabelFor(m => m.Relationship)
+            </dt>
+            <dd>
+                @Html.TextBoxFor(m => m.Relationship, new { @class = "k-textbox", maxlegth = 256 })
+            </dd>
+            <dt>
+                @Html.LabelFor(m => m.Email)
+            </dt>
+            <dd>
+                @Html.TextBoxFor(m => m.Email, new { @class = "k-textbox", maxlegth = 256, type = "email"  })
+            </dd>
+            <dt>
+                @Html.LabelFor(m => m.Phone)
+            </dt>
+            <dd>
+                @Html.TextBoxFor(m => m.Phone, new { @class = "k-textbox", maxlegth = 17, type = "tel"})
+            </dd>
+            <dt>
+                @Html.LabelFor(m => m.PreferredContactMethod)
+            </dt>
+            <dd>
+                @Html.DropDownListFor(m => m.PreferredContactMethod, Model.PreferredContactMethodOptions)
+            </dd>
+            <dt>
+                <button class="gray" id="saveParent">
+                    Save</button>
+                &nbsp; &nbsp; 
+                <button class="gray" id="cancelSaveParent" @if (!@Model.ShowCancelButton){<text>style='visibility:hidden;'</text>}   >
+                    Cancel</button>  
+            </dt>
+            <dd id="postSaveDD">
+            </dd>
+        </dl>
+    </fieldset> 
+</form>
+<script src="../../Scripts/StudentParent/Create.js?ScriptVersion=@CaseloadManager.Helpers.AppSettings.ScriptVersion"></script>

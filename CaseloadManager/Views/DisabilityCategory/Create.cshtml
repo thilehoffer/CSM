@@ -1,0 +1,41 @@
+﻿@model CaseloadManager.Models.DisabilityCategoryModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2> 
+
+<form id="createtDisabilityCategoryForm">
+    <fieldset>
+        <legend>DisabilityCategory</legend>
+
+        @Html.HiddenFor(model => model.ID)
+        <dl>
+            <dt>
+                @Html.LabelFor(model => model.Description)
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.Description, new { @class = "k-textbox", @maxlength = "100" })
+            </dd>
+            <dt>
+                @Html.LabelFor(model => model.Active)
+            </dt>
+            <dd>
+                @Html.CheckBoxFor(model => model.Active)
+            </dd>
+            <dt>
+                <button class="gray" id="createDisabilityCategory">
+                    Save</button>
+                &nbsp;&nbsp;
+            <button class="gray" id="cancelCreateDisabilityCategory">
+                Cancel</button>
+            </dt>
+            <dd id="postCreateDisabilityCategory"></dd>
+        </dl>
+    </fieldset>
+</form>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<script src="../../Scripts/Admin/Create.js?ScriptVersion=@CaseloadManager.Helpers.AppSettings.ScriptVersion"></script>

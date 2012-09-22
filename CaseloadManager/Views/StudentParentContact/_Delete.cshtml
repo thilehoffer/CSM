@@ -1,0 +1,20 @@
+﻿@using System.Diagnostics
+@using CaseloadManager.Helpers
+@model CaseloadManager.Models.StudentParentContactModel
+@{
+    Debug.Assert(Model.DateTimeOfContact != null, "Model.DateTimeOfContact != null");
+}
+<form id="DeleteStudentParentContactForm">
+    <br />
+    <p>
+        @Html.HiddenFor(m => m.StudentParentContactId)
+        <b>Are you sure you want to delete the contact record for @(@Model.StudentName)'s guardian @(@Model.ParentName) on @(Model.DateTimeOfContact.Value.ToString("d")) and any attachments?</b>
+        <br />
+        <br />
+        <button class="gray" id="deleteStudentParentContact">
+            Yes, Delete</button>&nbsp;&nbsp;
+        <button class="gray" id="cancelDeleteButton">
+            No, Cancel</button>
+    </p>
+</form>
+<script src="../../Scripts/StudentParentContact/Delete.js?scriptVersion=@AppSettings.ScriptVersion"></script>

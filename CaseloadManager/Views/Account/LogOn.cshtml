@@ -1,0 +1,122 @@
+﻿@model CaseloadManager.Models.LogOnModel
+@{
+    ViewBag.Title = "Log On";
+}
+<h2>
+    Log On</h2>
+<p>
+    Please enter your user name and password. @Html.ActionLink("Register", "Register")
+    if you don't have an account.
+</p>
+@Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.")
+@using (Html.BeginForm())
+{
+    <div>
+        <fieldset>
+            <legend>Account Information</legend>
+            <div class="clear">
+            </div>
+            <div class="data-entry-container-narrow">
+                <label for="UserName">
+                    User Name</label>
+                <input type="text" id="UserName" name="UserName" class="k-textbox" maxlength="256"
+                    required validationmessage="User Name is required"></div>
+            <div class="data-entry-container">
+                <span class="k-invalid-msg" data-for="UserName"></span>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="data-entry-container-narrow">
+                <label for="Password">
+                    Password</label>&nbsp;&nbsp;
+                <input type="password" id="Password" name="Password" class="k-textbox" maxlength="256"
+                    required validationmessage="Password is required"></div>
+            <div class="data-entry-container">
+                <span class="k-invalid-msg" data-for="Password"></span>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="data-entry-container">
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe)
+            </div>
+            <div class="clear">
+            </div>
+            <div class="data-entry-container">
+                <input type="submit" id="save" class="gray" value="Log in" />
+            </div>
+            <div class="clear">
+            </div>
+            <a href="javascript:startRecovery();" style="float: left; width: 160px">Recover Account
+                Info</a>
+            <div class="clear">
+            </div>
+            <div id="recoverySection">
+                <input id="Email" name="Email"  class="k-textbox" maxlength="256" 
+                    placeholder="Enter your email" />
+                <div class="clear">
+                </div>
+                <a class="gray" href="javascript:recover();">Send</a><span id="resultContainer" style="margin-left:3px"></span>
+            </div>
+        </fieldset>
+    </div>
+    
+    <script type="text/javascript">
+
+        function recover() {
+            document.body.style.cursor = 'wait';
+            var emailAddress = $('#Email').val();
+
+
+
+            var urlLink = '@Url.Content("~/Account/AttemptToSendRecovery/")';
+            $.ajax(
+                {
+                    url: urlLink,
+                    type: 'POST',
+                    data: "{'emailAddress':'" + emailAddress + "'}",
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+
+
+                        if (data.Success == false) {
+                            document.body.style.cursor = 'default';
+                            $('#resultContainer').text(data.Message).addClass('error');
+                        }
+                        else {
+                            document.body.style.cursor = 'default';
+                            $('#resultContainer').text(data.Message).addClass('success');
+
+                        }
+                    },
+
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert('An error occured message to follow');
+                        alert(thrownError);
+                    }
+                }); 
+        }
+
+        function startRecovery() {
+            $('#recoverySection').show();
+        }
+
+
+        $(document).ready(function () {
+
+
+            $('#recoverySection').hide();
+
+            var validatable = $("form").kendoValidator().data("kendoValidator");
+            $("#save").click(function () {
+                if (validatable.validate()) {
+                    return true;
+                }
+                return false;
+            });
+
+        });
+    </script>
+
+     
+}

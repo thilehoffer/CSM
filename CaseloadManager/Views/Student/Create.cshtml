@@ -1,0 +1,78 @@
+﻿@using CaseloadManager.KendoUI.HtmlExtenstions
+@using CaseloadManager.Helpers
+@model CaseloadManager.Models.StudentModel
+@{
+    ViewBag.Title = "Add new student";
+}
+<h2>
+    Add New Student
+</h2>
+<form id="createStudentForm">
+<fieldset>
+    <legend>Student Details</legend>
+    <dl>    @Html.HiddenFor(m => m.StudentId)
+        <dt>
+            @Html.LabelFor(m => m.FirstName)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "k-textbox", @maxlength = "256" })
+        </dd>
+        <dt>@Html.LabelFor(m => m.LastName)</dt>
+        <dd>
+            @Html.TextBoxFor(m => m.LastName, new { @class = "k-textbox", @maxlength = "256" })
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.DateOfBirth)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "k-input" })
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.ExpectedGraduationYear)
+        </dt>
+        <dd>
+            @Html.DropDownListFor(m => m.ExpectedGraduationYear, @Model.Years)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.PrimaryDisabilityId)
+        </dt>
+        <dd>
+            @Html.DropDownListFor(m => m.PrimaryDisabilityId, @Model.DisabilityCategories)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.SecondaryDisabilityId)
+        </dt>
+        <dd>
+            @Html.DropDownListFor(m => m.SecondaryDisabilityId, @Model.DisabilityCategories)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.LocalEducationAgency)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.LocalEducationAgency, new { @class = "k-textbox", @maxlength = "256" })
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.DateOfEntry)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.DateOfEntry, new { @class = "k-input" })
+        </dd>
+        <dt>
+            <input type="submit" id="save" class="gray" value="Create Student" />
+        </dt>
+        <dd id="postSubmitDD">
+        </dd>
+    </dl>
+</fieldset>
+<div class="clear">
+</div>
+<div>
+    <a class="gray" href='@Url.Content("~/Student/index")'>Back to List</a>
+</div>
+ <div class="clear">
+    </div>
+</form>
+<!-- Use some hidden fields to store selected values"-->
+@Html.Hidden("ExpectedGraduationYear", Model.ExpectedGraduationYear)
+<script src="../../Scripts/Student/Create.js?scriptVersion=@AppSettings.ScriptVersion" type="text/javascript"></script>  
+ 

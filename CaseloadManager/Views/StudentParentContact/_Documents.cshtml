@@ -1,0 +1,32 @@
+﻿@using System.Diagnostics
+@using System.Globalization
+@using System.Linq
+@model CaseloadManager.Models.StudentParentContactModel
+<form id="StudentParentContactAttachments">
+    <br />
+    <p>
+        @{
+            Debug.Assert(Model.StudentParentContactId != null, "Model.StudentParentContactId != null");
+        }
+        <b>Attachments for Contact with (@Model.ParentName) <a href="javascript:EditParentContact(@Model.StudentParentContactId.Value.ToString(CultureInfo.InvariantCulture))"></a></b>
+    </p>
+    @Html.HiddenFor(m => m.StudentId)
+    @Html.HiddenFor(m => m.StudentParentContactId)
+    <input type="hidden" id="StudentParentContactAttachmentsCount" value="@Model.GetAttachments().Count().ToString(CultureInfo.InvariantCulture)"/>
+    <div class="clear">
+    </div>
+    @Html.Partial("~/Views/Documents/_DocumentsListTable.cshtml", Model.GetAttachments())
+    <div class="clear">
+    </div>
+    <dl>
+        <dt>Add new Attachment</dt>
+        <dd>
+            <input id='attachments' name='attachments' type="file" />
+        </dd>
+        <dd>
+            <button class="gray" id="FinishedButton">
+                Finished</button></dd>
+    </dl>
+</form>
+<script src="../../Scripts/StudentParentContact/Documents.js?ScriptVersion=@CaseloadManager.Helpers.AppSettings.ScriptVersion"></script>
+

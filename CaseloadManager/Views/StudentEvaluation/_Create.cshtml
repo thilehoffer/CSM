@@ -1,0 +1,31 @@
+﻿@using CaseloadManager.Helpers
+@model CaseloadManager.Models.StudentEvaluationModel
+<form id="CreateEvaluationForm">
+<fieldset>
+    <legend>Create Evaluation For @Model.StudentName</legend>
+    <dl>
+            @Html.HiddenFor(m => m.StudentId)
+        <dt>
+            @Html.LabelFor(m => m.ScheduledDate)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.ScheduledDate)
+        </dd>
+        <dt>
+             @Html.LabelFor(m => m.DateCompleted)
+        </dt>
+        <dd>
+               @Html.TextBoxFor(m => m.DateCompleted)
+        </dd>
+        <dt>
+         <button class="gray" id="saveEvaluation">
+                Save</button>
+        </dt>
+        <dd id="postCreateEvaluationDD">
+        
+        </dd> 
+    </dl>
+</fieldset>
+</form>
+
+<script type="text/javascript" src="../../Scripts/StudentEvaluation/Create.js?scriptVersion=@AppSettings.ScriptVersion"></script>

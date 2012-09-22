@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Caseload Manager";
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+    Caseload Manager is a <i><b>secure</b>, fast, and easy to use</i>  application to help teachers manage special education student caseloads. <br /> 
+    Sign in to manage your caseload or click register to get started. Give it a try today.
+ <span class="no-user-message">@Html.ActionLink("Sign in", "LogOn", "Account") or @Html.ActionLink("Register", "Register", "Account") to begin</span>
+</p>

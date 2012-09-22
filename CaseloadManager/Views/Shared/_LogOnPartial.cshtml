@@ -1,0 +1,18 @@
+﻿<ul id="logOn">
+    @if (Request.IsAuthenticated)
+    {
+        <text><li>Welcome @Html.ActionLink(@User.Identity.Name, "Details", "Account")</li>
+        <li>@Html.ActionLink("Log Off", "LogOff", "Account")</li>
+       
+       
+        </text>
+    }
+    else
+    {
+        <text>
+        <li>@Html.ActionLink("Log On", "LogOn", "Account")</li>
+         
+       
+        </text>
+    }
+</ul>

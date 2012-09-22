@@ -1,0 +1,42 @@
+﻿@model CaseloadManager.Models.StudentModel
+@{
+    ViewBag.Title = "Details"; 
+}
+@using  CaseloadManager.Helpers;
+<h2>
+    @String.Format("{0} {1}", @Model.FirstName, @Model.LastName)
+</h2>
+@Html.HiddenFor(model => model.StudentId)
+<div id="Content" class="studentDetails">
+    <div id="studentTabStrip">
+        <ul>
+            <li id="demographicsTab" class="k-state-active">Demographics</li>
+            <li id="iEPsTab">IEPs</li>
+            <li id="evaluationsTab">Evaluations</li>
+            <li id="parentTab">Guardian</li>
+            <li id="parentContactTab">Contact Log</li>
+        </ul>
+        <div class="AJAXcontentSection">
+            Loading....
+        </div>
+        <div class="AJAXcontentSection">
+            Loading....
+        </div>
+        <div class="AJAXcontentSection">
+            Loading....
+        </div>
+        <div class="AJAXcontentSection">
+            Loading....
+        </div>
+        <div class="AJAXcontentSection">
+            Loading....
+        </div>
+    </div>
+</div>
+<div style="clear: both">
+</div>
+<p>
+    <a href='/Student/Index' class="gray">Back to Caseload</a>
+</p>
+<script src="../../Scripts/Student/Details.js?scriptVersion=@AppSettings.ScriptVersion" type="text/javascript"></script>
+ 

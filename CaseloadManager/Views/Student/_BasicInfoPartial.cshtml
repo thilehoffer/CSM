@@ -1,0 +1,74 @@
+﻿
+@using CaseloadManager.Helpers
+@model CaseloadManager.Models.StudentModel
+<form id="basicInfoForm">
+<fieldset>
+    <legend>Student Details</legend> 
+    <dl>
+        <dt>
+            @Html.HiddenFor(m => m.StudentId)
+            @Html.LabelFor(m => m.FirstName)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "k-textbox", @maxlength = "256" })
+        </dd>
+        <dt>@Html.LabelFor(m => m.LastName)</dt>
+        <dd>
+            @Html.TextBoxFor(m => m.LastName, new { @class = "k-textbox", @maxlength = "256" })
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.DateOfBirth)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "k-input" })
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.ExpectedGraduationYear)
+        </dt>
+        <dd>
+            @Html.DropDownListFor(m => m.ExpectedGraduationYear, @Model.Years)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.PrimaryDisabilityId)
+        </dt>
+        <dd>
+            @Html.DropDownListFor(m => m.PrimaryDisabilityId, @Model.DisabilityCategories)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.SecondaryDisabilityId)
+        </dt>
+        <dd>
+            @Html.DropDownListFor(m => m.SecondaryDisabilityId, @Model.DisabilityCategories)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.LocalEducationAgency)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.LocalEducationAgency, new { @class = "k-textbox", @maxlength = "256" })
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.DateOfEntry)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.DateOfEntry, new { @class = "k-input" })
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.CurrentStudent)
+        </dt>
+        <dd>
+            @Html.DropDownListFor(m => m.CurrentStudent, @Model.CurrentStudentOptions)
+        </dd>
+        <dt>
+            <input type="submit" id="saveBasicInfo" class="gray" value="Save" />
+        </dt>
+        <dd id="postSaveBasicDD">
+        </dd>
+    </dl>
+    <div class="clear">
+    </div>
+</fieldset>
+</form>
+ 
+
+<script type="text/javascript" src="../../Scripts/Student/BasicInfo.js?scriptVersion=@AppSettings.ScriptVersion"></script>
+ 

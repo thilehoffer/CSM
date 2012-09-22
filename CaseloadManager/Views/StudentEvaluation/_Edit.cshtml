@@ -1,0 +1,30 @@
+﻿@model CaseloadManager.Models.StudentEvaluationModel
+<form id="EditEvaluationForm">
+<fieldset>
+    <legend>Update Evaluation For @Model.StudentName</legend>
+    @Html.HiddenFor(m => m.StudentEvaluationId)
+    <dl>
+        <dt>
+            @Html.LabelFor(m => m.ScheduledDate)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.ScheduledDate)
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.DateCompleted)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.DateCompleted)
+        </dd>
+        <dt>
+            <button class="gray" id="saveEvaluation">
+                Save</button>&nbsp;&nbsp;
+            <button class="gray" id="cancelEvaluation">
+                Cancel</button>
+        </dt>
+        <dd id="postEditEvaluationDD">
+        </dd>
+    </dl>
+</fieldset>
+</form>
+<script src="../../Scripts/StudentEvaluation/Edit.js?@CaseloadManager.Helpers.AppSettings.ScriptVersion"></script>

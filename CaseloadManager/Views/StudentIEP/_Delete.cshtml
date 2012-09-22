@@ -1,0 +1,19 @@
+﻿@using CaseloadManager.Helpers
+@model CaseloadManager.Entities.StudentIEP
+<form id="DeleteIEPForm">
+<br /> 
+     
+<p>
+    
+    <b>Are you sure you want to delete @(@Model.Student.FirstName + " " + @Model.Student.LastName)'s
+        IEP scheduled for @(@Model.ScheduledDate.ToShortDateString() + " " + @Model.ScheduledDate.ToShortTimeString()) and any attachments?</b>
+    <br /><br />
+
+    @Html.HiddenFor(a => a.StudentIEPId)
+    <button class="gray" id="deleteIEP">
+        Yes, Delete</button>&nbsp;&nbsp;
+    <button class="gray" id="CancelIEP">
+        No, Cancel</button>
+</p>
+</form>
+<script type="text/javascript" src="../../Scripts/StudentIEP/Delete.js?@AppSettings.ScriptVersion"></script>

@@ -1,0 +1,535 @@
+﻿ 
+body
+{
+    background-color: #c6c6c4;
+    font-size: 16px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+p, ul
+{
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+
+
+header, footer, nav, section
+{
+    display: block;
+}
+
+header
+{
+    background: url("../Content/Images/_pattern.png") repeat scroll 0 0 #1A1A1A;
+    padding:0px;
+    color: white;
+}
+
+    header h1
+    {
+        font-weight: bold;
+        padding: 5px 0;
+        margin: 0;
+        color: #fff;
+        border: none;
+        line-height: 34px;
+        font-size: 32px !important;
+        text-shadow: 1px 1px 2px #111;
+    }
+
+    header a 
+    {
+        color: white;
+    }
+
+    header ul
+    {
+        list-style-type: none;
+        font-size: 16px;
+    }
+
+    header li
+    {
+        float: left;
+        margin-right: 5px;
+        margin-left: 0px;
+        line-height: normal;
+    }
+
+
+
+#nav
+{
+    float: left;
+    margin-left: 2px;
+}
+
+    #nav  li
+    {
+        height: 100%;
+    }
+    #nav a
+    {
+        margin-top:0px;
+        padding: 16px 3px 10px 3px;
+        text-decoration:none;
+        font-size:16px;
+        font-family:Helvetica, Sans-Serif;
+    }
+
+    #nav .child
+    {
+        margin-left: 10px;
+    }
+
+    #nav a:hover
+    {
+        background-color: #c6c6c4;
+        color:black;
+    }
+
+
+
+
+
+
+
+#logOn
+{
+    float: right;
+}
+
+
+
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 16px;
+    color: #000; 
+}
+
+h1
+{
+    font-size: 20px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+h2
+{
+    padding: 0 0 2px 0;
+    font-size: 18px;
+}
+
+h3
+{
+    font-size: 16px;
+}
+
+h4
+{
+    font-size: 14px;
+}
+
+h5, h6
+{
+    font-size: 14px;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main
+{
+    padding: 15px 15px 10px 15px;
+    background-color: #fff;
+    border-radius: 4px 0 0 0;
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+    color: Black;
+}
+
+footer, #footer
+{
+    background-color: #fff;
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0 0 30px 0;
+    font-size: .9em;
+    border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+}
+
+
+
+
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    border: 1px solid #ddd;
+    padding: 0 20px 20px 20px;
+    margin: 0 0 20px 0;
+}
+
+legend
+{
+    font-size: 17px;
+    font-weight: bold;
+}
+
+span.k-tooltip
+{
+    position: static;
+    display: inline;
+    border-width: 1px;
+    padding: 2px 5px 1px 16px;
+}
+
+
+
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+    min-height: 10px;
+    clear: both;
+    width: 100%;
+}
+
+
+.clearLeft
+{
+    clear: left;
+}
+
+.clearFlat
+{
+    height: 0px;
+    clear: both;
+    width: 100%;
+}
+
+
+.error
+{
+    color: Red;
+}
+
+.success
+{
+    color: Green;
+}
+
+
+
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label, .editor-label
+{
+    margin: 1em 0 0 0;
+}
+
+.display-field, .editor-field
+{
+    margin: 7px 0 0 0;
+}
+
+    .editor-field span
+    {
+    }
+
+.text-box
+{
+    width: 30em;
+}
+
+    .text-box.multi-line
+    {
+        height: 100px;
+    }
+
+.tri-state
+{
+    width: 80px;
+}
+
+
+/* This for data dispay*/
+.dataview-clear
+{
+    clear: both;
+    height: 7px;
+}
+
+.studentDetails
+{
+    float: left;
+    width: 80%;
+    display: block;
+    vertical-align: top;
+}
+
+    .studentDetails table
+    {
+    }
+
+.studentIndexTop
+{
+    min-height: 30px;
+    float: left;
+}
+
+    .studentIndexTop span
+    {
+        font-weight: bold;
+    }
+
+
+
+
+
+.studentMenu
+{
+    width: 15%;
+    float: left;
+    display: block;
+    vertical-align: top;
+    margin-top: -14px;
+}
+
+.grid-container
+{
+    float: left;
+    width: 220px;
+    vertical-align: top;
+}
+
+
+
+
+
+dl
+{
+}
+
+    dl dt
+    {
+        float: left;
+        font-weight: bold;
+        margin-right: 10px;
+        padding: 5px;
+        width: 200px;
+    }
+
+    dl dd
+    {
+        margin: 2px 0;
+        padding: 5px 0;
+    }
+
+
+input[type="submit"].small
+{
+    font-size: 12px;
+    padding: 1px;
+}
+
+input[type="submit"]
+{
+    font-size: 16px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+.top-header
+{
+    text-align: left;
+    padding-left: 2px;
+    margin-left: 2px;
+    font-size: 16px;
+    color: White;
+}
+
+
+
+
+
+
+
+.nextTo
+{
+    float: left;
+    margin-left: 5px;
+}
+
+button.gray, a.gray, input[type=submit].gray
+{
+    padding: 10px 10px;
+    -webkit-border-radius: 2px 2px;
+    border: solid 1px #dadada;
+    background: #f4f4f4; /* Old browsers */
+    background: -moz-linear-gradient(top, #f4f4f4 0%, #f1f1f1 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4f4f4), color-stop(100%,#f1f1f1)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f4f4f4 0%,#f1f1f1 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f4f4f4 0%,#f1f1f1 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f4f4f4 0%,#f1f1f1 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#f1f1f1',GradientType=0 ); /* IE6-9 */
+    color: #555;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0px 1px 1px rgba(255,255,255,1);
+    line-height: 1;
+    font-size: 11px;
+}
+
+.gray:hover
+{
+    border: 1px solid #c6c6c4;
+    background: -moz-linear-gradient(top, #f8f8f8 0%, #f1f1f1 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#f1f1f1)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f8f8f8 0%,#f1f1f1 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f8f8f8 0%,#f1f1f1 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f8f8f8 0%,#f1f1f1 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f1f1f1',GradientType=0 ); /* IE6-9 */
+    color: #222;
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(10, 10, 10, 0.4);
+    -moz-box-shadow: 0px 1px 1px 0px rgba(10, 10, 10, 0.4);
+    box-shadow: 0px 1px 1px 0px rgba(10, 10, 10, 0.4);
+}
+
+.gray:active
+{
+    border: 1px solid #c6c6c4;
+    color: #222;
+    -webkit-box-shadow: inset 0 0 2px 4px #f1f1f1, 0 1px 0 0 #eeeeee;
+    -moz-box-shadow: inset 0 0 2px 4px #f1f1f1, 0 1px 0 0 #eeeeee;
+    box-shadow: inset 0 0 2px 4px #f1f1f1, 0 1px 0 0 #eeeeee;
+}
+
+.smallerFont
+{
+    font-size: smaller;
+}
+
+
+
+button.graySmall, a.graySmall, input[type=submit].graySmall
+{
+    padding: 5px 5px;
+    -webkit-border-radius: 2px 2px;
+    border: solid 1px #dadada;
+    background: #f4f4f4; /* Old browsers */
+    background: -moz-linear-gradient(top, #f4f4f4 0%, #f1f1f1 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4f4f4), color-stop(100%,#f1f1f1)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f4f4f4 0%,#f1f1f1 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f4f4f4 0%,#f1f1f1 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f4f4f4 0%,#f1f1f1 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#f1f1f1',GradientType=0 ); /* IE6-9 */
+    color: #555;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0px 1px 1px rgba(255,255,255,1);
+    line-height: 1;
+    font-size: 11px;
+}
+
+.graySmall:hover
+{
+    border: 1px solid #c6c6c4;
+    background: -moz-linear-gradient(top, #f8f8f8 0%, #f1f1f1 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#f1f1f1)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f8f8f8 0%,#f1f1f1 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f8f8f8 0%,#f1f1f1 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f8f8f8 0%,#f1f1f1 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f1f1f1',GradientType=0 ); /* IE6-9 */
+    color: #222;
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(10, 10, 10, 0.4);
+    -moz-box-shadow: 0px 1px 1px 0px rgba(10, 10, 10, 0.4);
+    box-shadow: 0px 1px 1px 0px rgba(10, 10, 10, 0.4);
+}
+
+.graySmall:active
+{
+    border: 1px solid #c6c6c4;
+    color: #222;
+    -webkit-box-shadow: inset 0 0 2px 4px #f1f1f1, 0 1px 0 0 #eeeeee;
+    -moz-box-shadow: inset 0 0 2px 4px #f1f1f1, 0 1px 0 0 #eeeeee;
+    box-shadow: inset 0 0 2px 4px #f1f1f1, 0 1px 0 0 #eeeeee;
+}
+
+.k-tabstrip
+{
+    -webkit-transform: translatez(0);
+}
+
+.selectedOptionLink
+{
+    color: #DD4B39;
+    text-decoration:none;
+}

@@ -1,0 +1,52 @@
+﻿@using CaseloadManager.Helpers
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+
+    <link href="@Url.Content("~/Content/Kendu/styles/kendo.common.min.css")?scriptVersion=@AppSettings.ScriptVersion" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Kendu/styles/kendo.default.min.css")?scriptVersion=@AppSettings.ScriptVersion" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Site.css")?scriptVersion=@AppSettings.ScriptVersion" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/TableSort.css")?scriptVersion=@AppSettings.ScriptVersion" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")?scriptVersion=@AppSettings.ScriptVersion" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/Kendu/js/kendo.web.min.js")?scriptVersion=@AppSettings.ScriptVersion" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/namespace.js")?scriptVersion=@AppSettings.ScriptVersion" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/CaseloadManager.JsonAjaxResult.js")?scriptVersion=@AppSettings.ScriptVersion" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/CaseloadManager.Helpers.js")?scriptVersion=@AppSettings.ScriptVersion" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.tablesorter.min.js")?scriptVersion=@AppSettings.ScriptVersion" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")?scriptVersion=@AppSettings.ScriptVersion" type="text/javascript"></script>
+
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="clearFlat">
+            </div>
+            <div id="nav">
+                <ul>
+                    <li>
+                        <a href='/Student'>Caseload</a>
+                    </li>
+                    <li class="child">
+                        <a href='/Events'>Upcoming</a>
+                    </li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="child">@Html.ActionLink("Admin", "Index", "Admin")</li>}
+                    <li class="child">@Html.ActionLink("About", "About", "Home")</li>
+                </ul>
+            </div>
+
+            @Html.Partial("_LogOnPartial")
+
+            <div class="clearFlat">
+            </div>
+        </header>
+
+        <section id="main">
+            @RenderBody()
+        </section>
+    </div>
+</body>
+</html>

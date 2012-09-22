@@ -1,0 +1,48 @@
+/* tables */
+table.tablesorter {
+ 
+    font-weight: normal;
+    margin: 0px;
+    padding:0px;  
+	width: 100%;
+	text-align: left;
+    
+}
+table.tablesorter  th  {
+	 font-size: 13px;
+    font-weight: normal;
+    padding: 8px;
+    cursor:pointer;
+    background: #D3DBE9 url("../../Content/Images/gradient_light.png") repeat-x scroll 0 0;
+	border: solid 1px #9EB6CE;
+	color: #275F9D;
+}
+table.tablesorter td{
+ 
+	padding: 8px;
+    background: #e8edff; 
+    border: solid 1px #9EB6CE;
+    margin: 0px;
+    
+}
+table.tablesorter tr{
+ 
+	 
+    margin: 0px;
+    
+}
+ 
+
+table.tablesorter thead tr .headerSortUp {
+    background: #D3DBE9 url("../../Content/Images/gradient_light.png") repeat-x scroll 0 0;
+	background-image:  url("../../Content/Images/asc.gif");
+	background-repeat: no-repeat;
+	background-position:right;
+}
+table.tablesorter thead tr .headerSortDown {
+    background: #D3DBE9 url("../../Content/Images/gradient_light.png") repeat-x scroll 0 0;
+	background-image:  url("../../Content/Images/desc.gif");
+background-repeat: no-repeat;
+background-position:right;
+}
+ 

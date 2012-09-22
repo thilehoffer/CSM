@@ -1,0 +1,68 @@
+﻿@using System.Globalization
+@using CaseloadManager.Helpers
+@model CaseloadManager.Models.StudentModel
+<table id="dataTable" class="tablesorter"  >
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Relationship
+            </th>
+            <th>
+                Preferred
+                <br />
+                Contact method
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                Email
+            </th> 
+            <th>
+            </th>
+            <th>
+            </th> 
+        </tr>
+    </thead>
+    <tbody>
+
+       @foreach (var m in Model.GetStudentParents())
+        {  
+            <tr>
+                <td>
+                    @m.FullName
+                </td>
+                <td>
+                    @m.Relationship
+                </td>
+                <td>
+                    @m.PreferredContactMethod
+                </td>
+                <td>
+                    @m.Phone.FormatAsPhone()
+                </td> 
+                <td>
+                   <a target="_blank" href="mailTo:@m.Email">@m.Email</a>
+                </td>
+                <td>
+                    <a class='graySmall' href="javascript:EditParent('@m.StudentParentId.ToString(CultureInfo.InvariantCulture)');">edit</a>
+                </td>
+                <td>
+                    <a  class='graySmall' href="javascript:GetDeleteParent('@m.StudentParentId.ToString(CultureInfo.InvariantCulture)');">delete</a>
+                </td>
+            </tr>
+         
+        }
+    </tbody>
+</table>
+<div class="clear">
+</div>
+<div>
+    <button class="gray" id="createParent">
+        Add Parent or Guardian</button></div>
+<div class="clear">
+</div>
+<script src="../../Scripts/StudentParent/Index.js"></script>

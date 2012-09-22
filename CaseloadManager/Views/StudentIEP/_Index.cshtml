@@ -1,0 +1,63 @@
+﻿@using System.Diagnostics
+@model CaseloadManager.Models.StudentModel
+<table id="dataTable" class="tablesorter"  >
+    <thead>
+        <tr>
+            <th>
+                Scheduled Date
+            </th>
+            <th>
+                Date Of Meeting
+            </th>
+            <th>
+                Complete
+            </th>
+            <th>
+                Current
+            </th> 
+            <th>
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model.GetIeps())
+        {   Debug.Assert(m.StudentIEPId != null, "m.StudentIEPId != null");
+            <tr>
+                <td>
+                    @(m.ScheduledDate.HasValue ? m.ScheduledDate.Value.ToString("dddd MMM d, yyyy hh:mm tt") : "")
+                </td>
+                <td>
+                    @(m.DateOfMeeting.HasValue ? m.DateOfMeeting.Value.ToString("dddd MMM d, yyyy hh:mm tt") : "")
+                </td>
+                <td>
+                    @(m.IsComplete ? "Yes" : "No")
+                </td>
+                <td>
+                    @(m.IsCurrent ? "Yes" : "No")
+                </td> 
+                <td>
+                    <a class='graySmall' href='javascript:GetIepAttachments(@(m.StudentIEPId.Value))' >attachments</a>
+                </td>
+                <td>
+                    <a class='graySmall' href='javascript:EditIep(@(m.StudentIEPId.Value))' >edit</a>
+                </td>
+                <td>
+                    <a  class='graySmall' href='javascript:GetDeleteIep(@(m.StudentIEPId.Value))'>delete</a>
+                </td>
+            </tr>
+         
+        }
+    </tbody>
+</table>
+<div class="clear">
+</div>
+<div>
+    <button class="gray" id="createIEP">
+        Create IEP</button></div>
+<div class="clear">
+</div>
+<script src="../../Scripts/StudentIEP/Index.js?ScriptVersion=@CaseloadManager.Helpers.AppSettings.ScriptVersion"></script>

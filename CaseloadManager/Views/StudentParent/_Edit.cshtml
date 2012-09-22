@@ -1,0 +1,56 @@
+﻿@using CaseloadManager.Helpers;
+@model CaseloadManager.Models.EditStudentParentModel 
+<form id="EditParentForm">
+<fieldset>
+    <legend>@string.Format("Edit guardian of {0} {1}", Model.StudentFirstName, Model.StudentLastName)</legend>
+    @Html.HiddenFor(m => m.StudentId)
+    @Html.HiddenFor(m => m.StudentParentId)
+    <dl>
+        <dt>
+            @Html.LabelFor(m => m.FirstName)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "k-textbox", maxlegth = 256 })
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.LastName)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.LastName, new { @class = "k-textbox", maxlegth = 256 })
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.Relationship)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.Relationship, new { @class = "k-textbox", maxlegth = 256 })
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.Email)
+        </dt>
+        <dd>
+            @Html.TextBoxFor(m => m.Email, new { @class = "k-textbox", maxlegth = 256, type = "email"  })
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.Phone)
+        </dt>
+        <dd>
+            <input type='tel' id='Phone' name='Phone'  value='@Model.Phone.FormatAsPhone()' class='k-textbox' maxlength='17' />  
+        </dd>
+        <dt>
+            @Html.LabelFor(m => m.PreferredContactMethod)
+        </dt>
+        <dd>
+            @Html.DropDownListFor(m => m.PreferredContactMethod, Model.PreferredContactMethodOptions)
+        </dd>
+        <dt>
+            <button class="gray" id="editParent">
+                Save</button>&nbsp;&nbsp;
+            <button class="gray" id="cancelEditParent">
+                    Cancel</button>
+        </dt>
+        <dd id="postEditParentSaveDD">
+        </dd>
+    </dl>
+</fieldset>
+</form>
+<script src="../../Scripts/StudentParent/Edit.js?ScriptVersion=@AppSettings.ScriptVersion"></script> 

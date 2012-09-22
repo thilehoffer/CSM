@@ -1,0 +1,73 @@
+﻿@using System.Globalization
+@using CaseloadManager.Helpers
+@model CaseloadManager.Models.StudentModel
+<table id="dataTable" class="tablesorter"  >
+    <thead>
+        <tr>
+            <th>
+                Attempted Date
+            </th>
+            <th>
+                Contact
+                <br />
+                Successful
+            </th>
+            <th>
+                Parent
+            </th>
+            <th>
+                Notes
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model.GetStudentParentContacts())
+        {  
+            <tr>
+                <td>
+                    @(m.DateOfContact.ToString("dddd MMM d, yyyy hh:mm tt"))
+                </td>
+                <td>
+                    @(m.ContactMade ? "Yes" : "No")
+                </td>
+                <td>
+                    @(m.ParentName)
+                </td>
+                <td>
+                    @(m.ContactNotes.Left(75))
+                    @if (m.ContactNotes.Length > 75)
+                    { 
+                        <a href="javascript:ShowNotes('@m.StudentParentContactId.ToString(CultureInfo.InvariantCulture)');">....</a>
+                    }
+                </td>
+                <td>
+                    <a class='graySmall' href='javascript:GetStudentParentContactAttachments(@(m.StudentParentContactId));'>attachments</a>
+                </td>
+                <td>
+                    <a class='graySmall' href='javascript:EditStudentParentContact(@(m.StudentParentContactId));'>edit</a>
+                </td>
+                <td>
+                    <a class='graySmall' href='javascript:GetDeleteStudentParentContact(@(m.StudentParentContactId));'>delete</a>
+                </td>
+            </tr>
+         
+        }
+    </tbody>
+</table>
+<div id="notesWindow">
+    
+</div>
+<div class="clear">
+</div>
+<div>
+    <button class="gray" id="createParentContact">
+        Record Parent Contact</button></div>
+<div class="clear">
+</div>
+<script src="../../Scripts/StudentParentContact/Index.js?scriptVersion=@AppSettings.ScriptVersion"></script>

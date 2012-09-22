@@ -1,0 +1,40 @@
+﻿@model CaseloadManager.Models.DisabilityCategoryModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<form id="editDisabilityCategoryForm">
+    <fieldset>
+        <legend>DisabilityCategory</legend>
+
+        @Html.HiddenFor(model => model.ID)
+        <dl>
+            <dt>
+                @Html.LabelFor(model => model.Description)
+            </dt>
+            <dd>
+                @Html.TextBoxFor(model => model.Description, new { @class = "k-textbox", @maxlength = "100" })
+            </dd>
+            <dt>
+                @Html.LabelFor(model => model.Active)
+            </dt>
+            <dd>
+                @Html.CheckBoxFor(model => model.Active)
+            </dd>
+            <dt>
+                <button class="gray" id="saveDisabilityCategory">
+                    Save</button>
+                &nbsp;&nbsp;
+            <button class="gray" id="cancelDisabilityCategory">
+                Cancel</button>
+            </dt>
+            <dd id="postSaveDisabilityCategory"></dd>
+
+        </dl>
+    </fieldset>
+</form>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<script src="../../Scripts/Admin/Edit.js?ScriptVersion=@CaseloadManager.Helpers.AppSettings.ScriptVersion"></script>
